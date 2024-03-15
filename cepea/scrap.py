@@ -9,12 +9,6 @@ import OleFileIO_PL
 import datetime as dt
 import pandas as pd
 
-def remove_old_files():
-    file_list = os.listdir(r"cepea")
-    for file_name in file_list:
-        if not file_name.endswith('.xls'):
-            continue
-        os.remove(os.path.join('cepea', file_name))
  
 def download_file(url, file_name):
     headers = {"User-agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36"}
@@ -32,8 +26,6 @@ dados = [
 
 
 # faz o download do excel no site do CEPEA
-remove_old_files()
-
 for dado in dados:
     name_file = dado['base_name'] + '_' + time.strftime("%d.%m.%Y") + '.xls'
     path_file = os.path.join('cepea', name_file)
