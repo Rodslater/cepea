@@ -1,10 +1,8 @@
 import requests
 import os
 import pandas as pd
-
 from tqdm import tqdm
 from pyexcel_xls import get_data
-from datetime import datetime
 
 def download_file(url, file_name):
     headers = {"User-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.80 Safari/537.36"}
@@ -18,9 +16,7 @@ def get_cepea_data(commodity, url):
     download_file(url, file_path)
     data = get_data(file_path)
     df = pd.DataFrame(data[0][3:], columns=data[0][2])
-    df["Data"] = pd.to_datetime(df["Data"], format='%d/%m/%Y')
-    df.set_index("Data", inplace=True)
-    df.to_csv(f'cepea/{commodity}.csv')
+    df.to_csv(f'cepea/{commodity}.csv', index=False)
 
 commodities = [
     {'name': 'etanol_hidratado', 'url': 'https://www.cepea.esalq.usp.br/br/indicador/series/etanol.aspx?id=103'},
@@ -30,4 +26,3 @@ commodities = [
 
 for commodity in commodities:
     get_cepea_data(commodity['name'], commodity['url'])
-
