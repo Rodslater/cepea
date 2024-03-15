@@ -7,6 +7,7 @@ from tqdm import tqdm
 import pyexcel_xls
 import OleFileIO_PL
 import datetime as dt
+import pandas as pd
 
 def remove_old_files():
     file_list = os.listdir(r"cepea")
