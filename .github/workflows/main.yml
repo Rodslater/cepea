@@ -21,7 +21,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           python -m pip install --upgrade pip requests
-          pip install csv datetime os from tqdm pyexcel_xls OleFileIO_PL datetime
+          pip install tqdm pyexcel_xls OleFileIO_PL
 
       - name: Execute Script
         run: |
