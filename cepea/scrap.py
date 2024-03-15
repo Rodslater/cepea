@@ -27,12 +27,7 @@ def download_file(url, file_name):
 
 dados = [
     {'base_name': 'etanol_hidratado', 'url': 'https://www.cepea.esalq.usp.br/br/indicador/series/' + 'etanol.aspx?id=103'},
-    {'base_name': 'etanol_anidro', 'url': 'https://www.cepea.esalq.usp.br/br/indicador/series/' + 'etanol.aspx?id=104'},
-    {'base_name': 'frango_congelado', 'url': 'https://www.cepea.esalq.usp.br/br/indicador/series/' + 'frango.aspx?id=181'},
-    {'base_name': 'frango_resfriado', 'url': 'https://www.cepea.esalq.usp.br/br/indicador/series/' + 'frango.aspx?id=130'},
-    {'base_name': 'milho', 'url': 'https://www.cepea.esalq.usp.br/br/indicador/series/' + 'milho.aspx?id=77'},
-    {'base_name': 'soja_parana', 'url': 'https://www.cepea.esalq.usp.br/br/indicador/series/' + 'soja.aspx?id=12'},
-    {'base_name': 'trigo_parana', 'url': 'https://www.cepea.esalq.usp.br/br/indicador/series/' + 'trigo.aspx?id=178'}
+    {'base_name': 'milho', 'url': 'https://www.cepea.esalq.usp.br/br/indicador/series/' + 'milho.aspx?id=77'}
 ]
 
 
@@ -60,9 +55,4 @@ def dados_cepea(commoditie):
         
 #Chamando a função para cada uma das commodities
 etanol_hidratado = dados_cepea('etanol_hidratado')
-etanol_anidro = dados_cepea('etanol_anidro')
-frango_congelado = dados_cepea('frango_congelado')
-frango_resfriado = dados_cepea('frango_resfriado')
 milho = dados_cepea('milho')
-soja_parana = dados_cepea('soja_parana')
-trigo_parana = dados_cepea('trigo_parana')
