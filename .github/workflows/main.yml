@@ -24,7 +24,7 @@ jobs:
 
       - name: Execute Script
         run: |
-          python "data/scrap.py"
+          python "scrap.py"
 
       - name: Commit results
         run: |
