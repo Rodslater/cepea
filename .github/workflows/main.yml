@@ -1,0 +1,35 @@
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+name: 01-python-script
+
+jobs:
+  run-python-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.12
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas requests beautifulsoup4 html5lib datetime
+
+      - name: Execute Script
+        run: |
+          python "data/scrap.py"
+
+      - name: Commit results
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git add .
+          git commit -m "Results from Python script" || echo "No changes to commit"
+          git push origin || echo "No changes to commit"
