@@ -18,7 +18,6 @@ dados = [
     {'base_name': 'etanol_hidratado', 'url': 'https://www.cepea.esalq.usp.br/br/indicador/series/' + 'etanol.aspx?id=103'},
     {'base_name': 'boi_gordo', 'url': 'https://www.cepea.esalq.usp.br/br/indicador/series/' + 'boi-gordo.aspx?id=2'}, 
     {'base_name': 'milho', 'url': 'https://www.cepea.esalq.usp.br/br/indicador/series/' + 'milho.aspx?id=77'},
-    {'base_name': 'leite', 'url': 'https://www.cepea.esalq.usp.br/br/indicador/series/' + 'leite.aspx?id=leitep'},
     {'base_name': 'frango', 'url': 'https://www.cepea.esalq.usp.br/br/indicador/series/' + 'frango.aspx?id=181'}
 ]
 
@@ -45,13 +44,11 @@ def dados_cepea(commoditie):
 #Chamando a função para cada uma das commodities
 etanol_hidratado = dados_cepea('etanol_hidratado')
 boi_gordo = dados_cepea('boi_gordo')
-leite = dados_cepea('leite')
 milho = dados_cepea('milho')
 frango = dados_cepea('frango')
 
 etanol_hidratado.to_csv('cepea/etanol_hidratado.csv')
 boi_gordo.to_csv('cepea/boi_gordo.csv')
-leite.to_csv('cepea/leite.csv')
 milho.to_csv('cepea/milho.csv')
 frango.to_csv('cepea/frango.csv')
 
